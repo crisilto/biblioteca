@@ -125,7 +125,7 @@ public class Libro {
         info.append("Idioma: ").append(idioma.equals("Idioma no especificado") ? "No proporcionado" : idioma).append("\n");
         info.append("Páginas: ").append(paginas > 0 ? getPaginas() : "No proporcionado").append("\n");
         info.append("Leído: ").append(leido ? "Sí" : "No").append("\n");
-        info.append("Antigüedad: ").append(getAntiguedad()).append("\n");
+        info.append("Antigüedad: ").append(getAntiguedad());
         return info.toString();
     }
 

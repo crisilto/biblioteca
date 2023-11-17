@@ -61,7 +61,6 @@ public class Biblioteca {
                 return;
             }
         }
-
     }
 
     //Buscar un libro en el array libros[]
@@ -94,7 +93,7 @@ public class Biblioteca {
         biblioteca.añadirLibro(libro2);
 
         boolean salir = false; //Booleano para controlar menú
-        System.out.println("Bienvenido/a a la Biblioteca.\nSeleccione una opción (6 para salir): ");
+        System.out.println("Bienvenido/a a la Biblioteca.\nSeleccione una opción (7 para salir): ");
         while (!salir) {
             System.out.println(
                     "1. Mostrar Biblioteca" +
@@ -102,7 +101,8 @@ public class Biblioteca {
                             "\n3. Añadir Libro" +
                             "\n4. Eliminar libro" +
                             "\n5. Marcar libro como leído" +
-                            "\n6. Salir");
+                            "\n6. Mostrar información de un libro" +
+                            "\n7. Salir");
             int opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
@@ -154,6 +154,21 @@ public class Biblioteca {
                     System.out.println("---------------------------");
                     break;
                 case 6:
+                    System.out.println("---------------------------");
+                    System.out.println("¿De qué libro desea ver su información? Indique el título.");
+                    sc.nextLine();
+                    String nombreInformacion = sc.nextLine();
+                    System.out.println("---------------------------");
+                    for(int i = 0; i < biblioteca.numLibros; i++){
+                        Libro libro = biblioteca.libros[i];
+                        if(libro.getTitulo().equalsIgnoreCase(nombreInformacion)){
+                            System.out.print(libro.getInformacion());
+                            break;
+                        }
+                    }
+                    System.out.println("---------------------------");
+                    break;
+                case 7:
                     System.out.println("---------------------------");
                     System.out.println("Hasta luego.");
                     salir = true;
